@@ -4,7 +4,7 @@
 - 💞️ I’m looking to collaborate on Label Manager
 - 📫 How to reach me www.mastafive.com
 - 😄 Pronouns: He\Him
-- ⚡ Fun fact: ...
+- ⚡ Fun fact: Tutti mi devono un favore
 
 <!---
 Mastafive/Mastafive is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
