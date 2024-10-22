@@ -2,7 +2,7 @@
 - 👀 I’m interested in Music Biz - I.T. - Art
 - 🌱 I’m currently learning Microsoft End Point
 - 💞️ I’m looking to collaborate on Label Manager
-- 📫 How to reach me Know experience of the people
+- 📫 How to reach me www.mastafive.com
 - 😄 Pronouns: He\Him
 - ⚡ Fun fact: ...
 
