@@ -22,12 +22,12 @@ export default function Hero() {
       {/* Foreground */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl fade-up">
         <div className="mb-6">
-          <h1
-            className="logo-graffiti text-white text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight"
-            style={{ fontFamily: "'Permanent Marker', cursive", letterSpacing: "4px" }}
-          >
-            MASTAFIVE
-          </h1>
+          <img
+            src="/assets/mastafive-logo.png"
+            alt="Mastafive Logo"
+            className="logo-graffiti mx-auto w-auto h-40 sm:h-52 md:h-64 lg:h-72 object-contain"
+            draggable="false"
+          />
           <div className="h-1 w-24 bg-[#e91414] mx-auto mt-4" />
         </div>
 

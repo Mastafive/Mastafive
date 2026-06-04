@@ -8,14 +8,14 @@ export default function Footer() {
   return (
     <footer className="w-full bg-black border-t border-white/10 py-10">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="text-center md:text-left">
-          <p
-            className="text-white text-2xl font-black tracking-wider"
-            style={{ fontFamily: "'Permanent Marker', cursive", letterSpacing: "2px" }}
-          >
-            MASTAFIVE
-          </p>
-          <p className="text-white/40 text-xs tracking-widest uppercase mt-1">
+        <div className="text-center md:text-left flex flex-col items-center md:items-start">
+          <img
+            src="/assets/mastafive-logo.png"
+            alt="Mastafive"
+            className="h-12 w-auto object-contain"
+            draggable="false"
+          />
+          <p className="text-white/40 text-xs tracking-widest uppercase mt-3">
             © {new Date().getFullYear()} Mastafive — All rights reserved
           </p>
         </div>

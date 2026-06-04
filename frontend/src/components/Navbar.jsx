@@ -26,13 +26,13 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 group">
-          <span
-            className="text-white text-2xl md:text-3xl font-black tracking-wider"
-            style={{ fontFamily: "'Permanent Marker', cursive", letterSpacing: "2px" }}
-          >
-            MASTAFIVE
-          </span>
+        <a href="#home" className="flex items-center group">
+          <img
+            src="/assets/mastafive-logo.png"
+            alt="Mastafive"
+            className="h-10 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            draggable="false"
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
