@@ -20,15 +20,15 @@ export default function Hero() {
       </div>
 
       {/* Foreground */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl fade-up">
-        <div className="mb-6">
+      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-6xl fade-up">
+        <div className="mb-6 flex flex-col items-center">
           <img
             src="/assets/mastafive-logo.png"
             alt="Mastafive Logo"
-            className="logo-graffiti mx-auto w-auto h-40 sm:h-52 md:h-64 lg:h-72 object-contain"
+            className="logo-graffiti w-auto h-72 sm:h-96 md:h-[28rem] lg:h-[32rem] object-contain block"
             draggable="false"
           />
-          <div className="h-1 w-24 bg-[#e91414] mx-auto mt-4" />
+          <div className="h-1 w-24 bg-[#e91414] -mt-2 md:-mt-3" />
         </div>
 
         <p className="text-white/80 text-base md:text-lg tracking-[0.3em] uppercase mb-3">
