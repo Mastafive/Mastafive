@@ -4,7 +4,6 @@ import Hero from "../components/Hero";
 import MerchVideo from "../components/MerchVideo";
 import Tracks from "../components/Tracks";
 import Bio from "../components/Bio";
-import Discography from "../components/Discography";
 import Gallery from "../components/Gallery";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
@@ -17,7 +16,6 @@ export default function HomePage() {
       <MerchVideo />
       <Tracks />
       <Bio />
-      <Discography />
       <Gallery />
       <Contact />
       <Footer />

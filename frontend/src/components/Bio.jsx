@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { bioData } from "../mock";
 
 function BioImage({ src }) {
@@ -22,13 +23,13 @@ function BioParagraphs({ paragraphs, cta }) {
         <p key={p.slice(0, 60)}>{p}</p>
       ))}
 
-      <a
-        href={cta.href}
+      <Link
+        to={cta.href}
         className="inline-flex items-center gap-2 text-[#e91414] hover:text-white text-sm font-bold tracking-[0.2em] uppercase mt-2 transition-colors"
       >
         {cta.text}
         <ArrowRight size={16} />
-      </a>
+      </Link>
 
       {rest[0].map((p) => (
         <p key={p.slice(0, 60)}>{p}</p>

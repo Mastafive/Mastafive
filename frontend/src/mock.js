@@ -63,7 +63,7 @@ export const bioData = {
     "Produttore poliedrico presente anche in colonne sonore di serie tv e film.",
     "Ad oggi attraversa la penisola con i suoi set e live dove accompagna moltissimi artisti nazionali sul palco, non c\u2019\u00e8 limite al suono di Mastafive."
   ],
-  discographyLink: "#discografia",
+  discographyLink: "/discografia",
   discographyText: "VEDI DISCOGRAFIA"
 };
 
