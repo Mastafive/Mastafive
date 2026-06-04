@@ -1,5 +1,5 @@
 // Discography data for Mastafive
-// Each entry: { year, artist, title, note?, q? (custom search query) }
+// Each entry: { year, artist, title, note? }
 // Spotify search URL: https://open.spotify.com/search/<encoded_query>
 
 export const albumsAndEPs = [
@@ -8,7 +8,7 @@ export const albumsAndEPs = [
   { year: "1998", artist: "Gatekeepaz feat. Maory B.", title: "Custodi del segreto", note: "Disponibile anche in versione Remastered digitale" },
   { year: "1999", artist: "Gatekeepaz", title: "Dietro il cancello", note: "Disponibile anche in versione Remastered digitale" },
   { year: "2001", artist: "Rawl MC", title: "Il mondo" },
-  { year: "2002", artist: "Jacky Blu", title: "Dolce Stile", note: "Produzione della traccia Dolce come il sale" },
+  { year: "2002", artist: "Jacky Blu", title: "Dolce Stile", note: "Produzione della traccia Dolce come il sale e Rap in \"Deve Andare Così\"" },
   { year: "2002", artist: "Ragazzi'n Gamba", title: "Gioco da Soul" },
   { year: "2002", artist: "MC Giaime", title: "Incompatibile 1999 - 2002", note: "Partecipazione con i Gatekeepaz alla traccia 02" },
   { year: "2003", artist: "Jhanasky (Elektromasta)", title: "The Fat Brother of Kerlin Krenzen" },
@@ -26,12 +26,19 @@ export const albumsAndEPs = [
   { year: "2006", artist: "Clementino", title: "Napoli Manicomio" },
   { year: "2006", artist: "Jhanasky", title: "End Or Fine" },
   { year: "2007", artist: "Pula+", title: "Mia Fobia" },
+  { year: "2007", artist: "Raige", title: "Hip Hope" },
   { year: "2007", artist: "Rayden", title: "C.A.L.M.A." },
   { year: "2007", artist: "Strike The Head", title: "Prima di Dormire" },
   { year: "2007", artist: "Canebullo", title: "Mani Sporche" },
+  { year: "2007", artist: "Rew e Shade", title: "Super Eroe Offresi" },
   { year: "2020", artist: "Mastafive", title: "Beats For Freestyle, Vol. 1", note: "Raccolta di strumentali" },
-  { year: "2020", artist: "Autori Vari", title: "C.G.P.S.F.S.T.D.A.C.", note: "Compilation collaborativa distribuita da B.M. Records" },
-  { year: "2024", artist: "Mastafive", title: "Euforia Collabo", note: "Album/compilation con Istintro, Me And The Mic, Mi Pare Rmx, Andare Via, Il Testimone, Formiche Rmx" }
+  { year: "2020", artist: "Mastafive", title: "C.G.P.S.F.S.T.D.A.C.", note: "Compilation di tracce dove Mastafive fa il Rap, distribuita da B.M. Records" },
+  {
+    year: "2024",
+    artist: "Mastafive",
+    title: "Euforia Collabo",
+    note: "Album/compilation di 11 tracce interamente curato da Mastafive. Include: Istintro (con Alfre D'), Me And The Mic (con Lefty, Dema, Sfera & DJ Kamo), Mi Pare Remix (con Principe e Libo), Andare Via (con Funk Shui Project e Kiave), Il Testimone - Problem 9 (con Papilla Bronx e Norman H), Formiche RMX (con Rawl Mc e Psyko Killa)"
+  }
 ];
 
 export const singlesAndTracks = [
@@ -42,7 +49,7 @@ export const singlesAndTracks = [
   { year: "1998", artist: "Rawl MC feat. Mem-H-Ori", title: "Pensieri", note: "In Sampla'98" },
   { year: "2000", artist: "Gatekeepaz feat. DJ Double S", title: "Gate Metal Jacket", note: "Singolo ufficiale, anche in digitale" },
   { year: "2000", artist: "Gatekeepaz Crew", title: "Sedie in Circolo", note: "In Homies and Money" },
-  { year: "2001", artist: "Mastafive", title: "Fuga e Fiesta", note: "Singolo ufficiale, anche in digitale" },
+  { year: "2001", artist: "Mastafive feat. MX", title: "Fuga e Fiesta", note: "Singolo ufficiale, anche in digitale" },
   { year: "2001", artist: "Mastafive", title: "Mastafive lo fa", note: "In Hip Hop and Stop" },
   { year: "2002", artist: "Mastafive & BiggaGià2", title: "Messo come sei", note: "In Da Bombz" },
   { year: "2002", artist: "DJ Lil Cut & DJ Walterix", title: "Dinamyte soul Men", note: "In Diesel U Music" },
@@ -55,23 +62,23 @@ export const singlesAndTracks = [
   { year: "2006", artist: "Gatekeyz", title: "Stai Tranquillo" },
   { year: "2006", artist: "Da Giantz", title: "Palla al piede", note: "In HipHop Solidale" },
   { year: "2006", artist: "Ragazzi 'n Gamba", title: "Quando Vieni", note: "In DJ Koma - Una Mole di MC's" },
-  { year: "2007", artist: "TheNextOne", title: "The Age Of Acquarius" },
+  { year: "2007", artist: "TheNextOne", title: "The Age Of Acquarius", note: "Mixtape" },
   { year: "2007", artist: "Pula+", title: "Cosa vuoi da me", note: "In Monkey Bizness" },
   { year: "2019", artist: "Mastafive", title: "Bad Boy" },
   { year: "2024", artist: "Mastafive, Sesto Carnera, Blo/B, De Angelo Parpaglione", title: "Galassia" },
-  { year: "2025", artist: "Mastafive", title: "Genova è / Genova è Genova è" },
-  { year: "2025", artist: "Mastafive", title: "Classic Skillz (Version 91)" },
-  { year: "2025", artist: "jhanaskys orchestra", title: "now for ever", note: "Progetto elettronico parallelo" },
-  { year: "2025", artist: "Mastafive", title: "Hustler RMX" },
+  { year: "2025", artist: "Mastafive", title: "Genova è / Main e Calvi" },
+  { year: "2025", artist: "Mastafive feat. Dikson", title: "Classic Skillz (Version 91)" },
+  { year: "2025", artist: "Mastafive & Jhanaskys orchestra", title: "now for ever", note: "Progetto per la neonata IIATJ label" },
+  { year: "2025", artist: "Mastafive feat. 3DC", title: "Hustler RMX" },
   { year: "2025", artist: "Mastafive", title: "MAKUTO" },
-  { year: "2025", artist: "Mastafive", title: "La provincia della provincia" },
-  { year: "2025", artist: "Mastafive", title: "Aspettando Quattalari" },
+  { year: "2025", artist: "Mastafive + Gera quello Vero", title: "La provincia della provincia" },
+  { year: "2025", artist: "Mastafive & Royal KS", title: "Aspettando Quattalari" },
   { year: "2025", artist: "Mastafive", title: "Porkeria Tango y Cumbita" },
-  { year: "2025", artist: "Mastafive", title: "Raperendum (8-9 giugno dagli un pugno)" },
+  { year: "2025", artist: "Mastafive & Assalti Frontali", title: "Raperendum (8-9 giugno dagli un pugno)" },
   { year: "2025", artist: "Mastafive feat. De Angelo Parpaglione & Numb", title: "Fuori di me" },
-  { year: "2025", artist: "Mastafive", title: "Insomnia Sunset" },
-  { year: "2026", artist: "Mastafive", title: "Zoticone" },
-  { year: "2026", artist: "Mastafive", title: "Sempre comunque" },
+  { year: "2025", artist: "Mastafive", title: "Insomnia Sunset", note: "E.P. Strumentale" },
+  { year: "2026", artist: "Mastafive, Gizmo & Vagasbronzo", title: "Zoticone" },
+  { year: "2026", artist: "Mastafive & Stylo aka Space", title: "Sempre comunque" },
   { year: "2026", artist: "Mastafive, Fato, Sguardo", title: "Un Giro con Noi" }
 ];
 
@@ -82,8 +89,6 @@ export const collaborations = [
 
 // Helper to generate Spotify web-player search URL for a track
 export function spotifySearchUrl(entry) {
-  // Build a clean search query from artist + title
-  // strip feat./featuring tokens to broaden match
   const cleanArtist = (entry.artist || "")
     .replace(/\bfeat\.?\b/gi, "")
     .replace(/\bfeaturing\b/gi, "")
