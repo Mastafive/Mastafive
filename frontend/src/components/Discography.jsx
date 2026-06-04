@@ -3,10 +3,14 @@ import { ExternalLink, Disc3, Music, Users } from "lucide-react";
 import { albumsAndEPs, singlesAndTracks, collaborations, spotifySearchUrl } from "../discography";
 
 const TABS = [
-  { id: "albums", label: "Album & EP", icon: Disc3, data: albumsAndEPs, count: albumsAndEPs.length },
-  { id: "singles", label: "Singoli & Tracce", icon: Music, data: singlesAndTracks, count: singlesAndTracks.length },
-  { id: "collab", label: "Collaborazioni", icon: Users, data: collaborations, count: collaborations.length }
+  { id: "albums", label: "Album & EP", icon: Disc3, data: albumsAndEPs },
+  { id: "singles", label: "Singoli & Tracce", icon: Music, data: singlesAndTracks },
+  { id: "collab", label: "Collaborazioni", icon: Users, data: collaborations }
 ];
+
+function entryKey(entry, idx) {
+  return `${entry.year || ""}-${entry.artist}-${entry.title}-${idx}`;
+}
 
 function DiscoRow({ entry }) {
   const url = spotifySearchUrl(entry);
@@ -24,31 +28,55 @@ function DiscoRow({ entry }) {
       )}
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline gap-2 flex-wrap">
-          <span className="text-white/70 text-sm md:text-base font-semibold">
-            {entry.artist}
-          </span>
+          <span className="text-white/70 text-sm md:text-base font-semibold">{entry.artist}</span>
           <span className="text-white/30 text-sm">—</span>
           <span className="text-white text-base md:text-lg font-bold group-hover:text-[#1DB954] transition-colors">
             {entry.title}
           </span>
         </div>
-        {entry.note && (
-          <p className="text-white/40 text-xs md:text-sm mt-1 italic">
-            {entry.note}
-          </p>
-        )}
+        {entry.note && <p className="text-white/40 text-xs md:text-sm mt-1 italic">{entry.note}</p>}
       </div>
-      <ExternalLink
-        size={16}
-        className="text-white/30 group-hover:text-[#1DB954] mt-1 flex-shrink-0 transition-colors"
-      />
+      <ExternalLink size={16} className="text-white/30 group-hover:text-[#1DB954] mt-1 flex-shrink-0 transition-colors" />
     </a>
   );
 }
 
+function TabButton({ tab, active, onClick }) {
+  const Icon = tab.icon;
+  return (
+    <button
+      onClick={onClick}
+      className={`relative inline-flex items-center gap-2 px-4 md:px-5 py-3 text-xs md:text-sm font-bold tracking-widest uppercase transition-colors ${
+        active ? "text-white" : "text-white/50 hover:text-white/80"
+      }`}
+    >
+      <Icon size={16} />
+      <span>{tab.label}</span>
+      <span
+        className={`ml-1 text-[10px] px-1.5 py-0.5 rounded-sm font-mono ${
+          active ? "bg-[#e91414] text-white" : "bg-white/10 text-white/60"
+        }`}
+      >
+        {tab.data.length}
+      </span>
+      {active && <span className="absolute -bottom-[5px] left-0 right-0 h-[3px] bg-[#e91414]" />}
+    </button>
+  );
+}
+
+function DiscoList({ entries, tabId }) {
+  return (
+    <div className="bg-[#0a0a0a]/40 border border-white/5 rounded-sm">
+      {entries.map((entry, idx) => (
+        <DiscoRow key={entryKey(entry, idx) + "-" + tabId} entry={entry} />
+      ))}
+    </div>
+  );
+}
+
 export default function Discography() {
-  const [active, setActive] = useState("albums");
-  const current = TABS.find((t) => t.id === active);
+  const [activeId, setActiveId] = useState("albums");
+  const current = TABS.find((t) => t.id === activeId);
 
   return (
     <section id="discografia" className="w-full bg-black py-20 md:py-28 border-t border-white/5">
@@ -63,42 +91,18 @@ export default function Discography() {
           </p>
         </div>
 
-        {/* Tabs */}
         <div className="flex flex-wrap gap-2 md:gap-3 mb-8 border-b border-white/10 pb-1">
-          {TABS.map((tab) => {
-            const Icon = tab.icon;
-            const isActive = tab.id === active;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActive(tab.id)}
-                className={`relative inline-flex items-center gap-2 px-4 md:px-5 py-3 text-xs md:text-sm font-bold tracking-widest uppercase transition-colors ${
-                  isActive ? "text-white" : "text-white/50 hover:text-white/80"
-                }`}
-              >
-                <Icon size={16} />
-                <span>{tab.label}</span>
-                <span
-                  className={`ml-1 text-[10px] px-1.5 py-0.5 rounded-sm font-mono ${
-                    isActive ? "bg-[#e91414] text-white" : "bg-white/10 text-white/60"
-                  }`}
-                >
-                  {tab.count}
-                </span>
-                {isActive && (
-                  <span className="absolute -bottom-[5px] left-0 right-0 h-[3px] bg-[#e91414]" />
-                )}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* List */}
-        <div className="bg-[#0a0a0a]/40 border border-white/5 rounded-sm">
-          {current.data.map((entry, idx) => (
-            <DiscoRow key={`${active}-${idx}`} entry={entry} />
+          {TABS.map((tab) => (
+            <TabButton
+              key={tab.id}
+              tab={tab}
+              active={tab.id === activeId}
+              onClick={() => setActiveId(tab.id)}
+            />
           ))}
         </div>
+
+        <DiscoList entries={current.data} tabId={current.id} />
 
         <p className="text-white/30 text-xs mt-6 text-center">
           I link aprono la ricerca sul web player di Spotify. Alcuni brani del catalogo storico potrebbero non essere disponibili in streaming.

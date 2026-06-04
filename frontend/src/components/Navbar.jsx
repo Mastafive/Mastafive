@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import useScrolled from "../hooks/useScrolled";
 
 const NAV_LINKS = [
   { label: "HOME", href: "#home" },
@@ -10,15 +11,45 @@ const NAV_LINKS = [
   { label: "CONTATTI", href: "#contact" }
 ];
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+function NavLink({ label, href, onClick, mobile }) {
+  if (mobile) {
+    return (
+      <a
+        href={href}
+        onClick={onClick}
+        className="text-white/80 hover:text-white text-base tracking-widest font-semibold"
+      >
+        {label}
+      </a>
+    );
+  }
+  return (
+    <a
+      href={href}
+      className="text-white/80 hover:text-white text-sm tracking-widest font-semibold transition-colors relative group"
+    >
+      {label}
+      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#e91414] transition-all duration-300 group-hover:w-full" />
+    </a>
+  );
+}
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+function Brand() {
+  return (
+    <a href="#home" className="flex items-center group">
+      <img
+        src="/assets/mastafive-logo.png"
+        alt="Mastafive"
+        className="h-10 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        draggable="false"
+      />
+    </a>
+  );
+}
+
+export default function Navbar() {
+  const scrolled = useScrolled(40);
+  const [open, setOpen] = useState(false);
 
   return (
     <header
@@ -27,25 +58,11 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
-        <a href="#home" className="flex items-center group">
-          <img
-            src="/assets/mastafive-logo.png"
-            alt="Mastafive"
-            className="h-10 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            draggable="false"
-          />
-        </a>
+        <Brand />
 
         <nav className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              className="text-white/80 hover:text-white text-sm tracking-widest font-semibold transition-colors relative group"
-            >
-              {l.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#e91414] transition-all duration-300 group-hover:w-full" />
-            </a>
+            <NavLink key={l.href} label={l.label} href={l.href} />
           ))}
         </nav>
 
@@ -62,14 +79,13 @@ export default function Navbar() {
         <div className="md:hidden bg-black/95 border-t border-white/5">
           <nav className="flex flex-col px-6 py-4 gap-4">
             {NAV_LINKS.map((l) => (
-              <a
-                key={l.label}
+              <NavLink
+                key={l.href}
+                label={l.label}
                 href={l.href}
+                mobile
                 onClick={() => setOpen(false)}
-                className="text-white/80 hover:text-white text-base tracking-widest font-semibold"
-              >
-                {l.label}
-              </a>
+              />
             ))}
           </nav>
         </div>
