@@ -47,7 +47,7 @@ export const spotifyArtist = {
 
 export const bioData = {
   title: "BIO MASTAFIVE",
-  image: "https://static.wixstatic.com/media/c3f8c9_66e16986f54e5e8fe41f498d2754f068.jpg/v1/fill/w_500,h_900,al_c,lg_1,q_85,enc_avif,quality_auto/c3f8c9_66e16986f54e5e8fe41f498d2754f068.jpg",
+  image: "/assets/mastafive-bio.jpg",
   paragraphs: [
     "Mastafive al secolo Johnny Mastrocinque , 30 anni sul mixer, sia come Dee jay che come produttore, predilige le sonorit\u00e0 Funkie Jazz, Rap, Rock in cui la sua poliedricit\u00e0 artistica si riversa in pista.",
     "Cresciuto in seno alla cultura Hip Hop ne \u00e8 uno dei testimoni pi\u00f9 appassionati.",
