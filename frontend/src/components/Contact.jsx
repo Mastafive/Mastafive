@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Mail, Send, Instagram, Facebook, Twitter, Linkedin, Youtube, Music2 } from "lucide-react";
 import { contactData, socials } from "../mock";
 import { useToast } from "../hooks/use-toast";
 
 const ICON_MAP = { Instagram, Facebook, Twitter, Linkedin, Youtube, Music2 };
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 function validateForm(form) {
   if (!form.name || !form.email || !form.message) {
@@ -13,10 +15,6 @@ function validateForm(form) {
     return "Inserisci un indirizzo email valido.";
   }
   return null;
-}
-
-function simulateSend() {
-  return new Promise((resolve) => setTimeout(resolve, 900));
 }
 
 function ContactInfo() {
@@ -35,6 +33,16 @@ function ContactInfo() {
           </span>
           <span className="text-base">{contactData.bookingEmail}</span>
         </a>
+        <p className="text-white/50 text-xs mt-3 leading-relaxed">
+          Puoi compilare il form qui a fianco oppure scrivere direttamente a{" "}
+          <a
+            href={`mailto:${contactData.bookingEmail}`}
+            className="text-[#e91414] hover:text-white transition-colors font-semibold"
+          >
+            {contactData.bookingEmail}
+          </a>
+          .
+        </p>
       </div>
 
       <div>
@@ -95,10 +103,19 @@ function ContactForm() {
       return;
     }
     setSending(true);
-    await simulateSend();
-    setSending(false);
-    setForm({ name: "", email: "", subject: "", message: "" });
-    toast({ title: "Messaggio inviato!", description: "Your details were sent successfully!" });
+    try {
+      await axios.post(`${API}/contact`, form);
+      setForm({ name: "", email: "", subject: "", message: "" });
+      toast({
+        title: "Messaggio inviato!",
+        description: "Grazie per averci scritto. Ti risponderemo al più presto."
+      });
+    } catch (err) {
+      const detail = err?.response?.data?.detail || "Riprova tra qualche istante.";
+      toast({ title: "Invio fallito", description: String(detail) });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
