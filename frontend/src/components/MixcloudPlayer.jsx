@@ -94,13 +94,13 @@ export default function MixcloudPlayer() {
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-8 flex items-end justify-between gap-4 flex-wrap">
           <div>
-            <p className="text-[#e91414] text-[10px] tracking-[0.3em] uppercase mb-1.5 inline-flex items-center gap-1.5">
-              <Headphones size={11} />
-              Mixcloud
-            </p>
             <h2 className="heading-accent text-white text-2xl md:text-3xl font-black tracking-tight uppercase">
               Mix &amp; Podcast
             </h2>
+            <p className="text-[#e91414] text-[10px] tracking-[0.3em] uppercase mt-3 inline-flex items-center gap-1.5">
+              <Headphones size={11} />
+              Mixcloud
+            </p>
             <p className="text-white/60 text-xs md:text-sm mt-3 max-w-xl leading-relaxed">
               I miei DJ set, mashup e trasmissioni podcast. Clicca su un mix per ascoltarlo qui o aprilo su Mixcloud.
             </p>
