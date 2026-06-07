@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { label: "HOME", href: "/#home", type: "hash" },
   { label: "BIO", href: "/#bio", type: "hash" },
   { label: "DISCOGRAFIA", href: "/discografia", type: "route" },
+  { label: "MIX", href: "/#mixcloud", type: "hash" },
   { label: "MUSICA", href: "/#musica", type: "hash" },
   { label: "GALLERY", href: "/#gallery", type: "hash" },
   { label: "CONTATTI", href: "/#contact", type: "hash" }

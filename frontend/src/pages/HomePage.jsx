@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import MixcloudPlayer from "../components/MixcloudPlayer";
 import MerchVideo from "../components/MerchVideo";
 import Tracks from "../components/Tracks";
 import Bio from "../components/Bio";
@@ -13,6 +14,7 @@ export default function HomePage() {
     <main className="w-full overflow-x-hidden">
       <Navbar />
       <Hero />
+      <MixcloudPlayer />
       <MerchVideo />
       <Tracks />
       <Bio />
