@@ -140,14 +140,7 @@ export const gallery = [
   "https://static.wixstatic.com/media/c3f8c9_584cd1050c4afa4bbf2e3ba04d987960.jpg/v1/fill/w_500,h_330,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c3f8c9_584cd1050c4afa4bbf2e3ba04d987960.jpg",
   "https://static.wixstatic.com/media/c3f8c9_1c2184f7c12245cb90c3221ee2b8a38c.jpg/v1/fill/w_500,h_380,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c3f8c9_1c2184f7c12245cb90c3221ee2b8a38c.jpg",
   "https://static.wixstatic.com/media/c3f8c9_c8d6860f5b2751dcc57b54230ebe6142.jpg/v1/fill/w_500,h_330,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c3f8c9_c8d6860f5b2751dcc57b54230ebe6142.jpg",
-  "https://static.wixstatic.com/media/c3f8c9_d088226c8cdedb9a628f0bee15473c0a.jpg/v1/fill/w_500,h_370,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c3f8c9_d088226c8cdedb9a628f0bee15473c0a.jpg",
-  "https://static.wixstatic.com/media/c3f8c9_a6993f2ee0c2b6553084d010ac678e6d.jpg/v1/fill/w_500,h_750,al_c,q_85,enc_avif,quality_auto/c3f8c9_a6993f2ee0c2b6553084d010ac678e6d.jpg",
-  "https://static.wixstatic.com/media/c3f8c9_cecc8e968d6e98fa708a7d9ce89b2959.jpg/v1/fill/w_500,h_770,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c3f8c9_cecc8e968d6e98fa708a7d9ce89b2959.jpg",
-  "https://static.wixstatic.com/media/c3f8c9_dfcfe048ebb3e5f145544a59f78032bc.jpg/v1/fill/w_500,h_740,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c3f8c9_dfcfe048ebb3e5f145544a59f78032bc.jpg",
-  "https://static.wixstatic.com/media/c3f8c9_2015da056ede1df2468d9d51ebb91566.jpg/v1/fill/w_500,h_830,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c3f8c9_2015da056ede1df2468d9d51ebb91566.jpg",
-  "https://static.wixstatic.com/media/c3f8c9_855162cbcec14fe618a664d965912a8d.jpg/v1/fill/w_500,h_770,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c3f8c9_855162cbcec14fe618a664d965912a8d.jpg",
-  "https://static.wixstatic.com/media/c3f8c9_58f0f55d287b356b324314dc74c0b8c6.jpg/v1/fill/w_500,h_375,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c3f8c9_58f0f55d287b356b324314dc74c0b8c6.jpg",
-  "https://static.wixstatic.com/media/c3f8c9_cb4f0bc74454617d599abe74b2757258.jpg/v1/fill/w_500,h_375,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c3f8c9_cb4f0bc74454617d599abe74b2757258.jpg"
+  "https://static.wixstatic.com/media/c3f8c9_d088226c8cdedb9a628f0bee15473c0a.jpg/v1/fill/w_500,h_370,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c3f8c9_d088226c8cdedb9a628f0bee15473c0a.jpg"
 ];
 
 export const contactData = {
