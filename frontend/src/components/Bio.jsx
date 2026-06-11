@@ -1,11 +1,12 @@
-import React from "react";
-import { ArrowRight } from "lucide-react";
+import React, { useState } from "react";
+import { ArrowRight, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
 import { bioData } from "../mock";
+import { Dialog, DialogContent, DialogTitle } from "./ui/dialog";
 
 function BioImage({ src }) {
   return (
-    <div className="relative md:sticky md:top-28">
+    <div className="relative">
       <div className="relative overflow-hidden rounded-sm shadow-2xl">
         <img src={src} alt="Mastafive Bio" className="w-full h-auto object-cover" />
         <div className="absolute inset-0 ring-1 ring-white/10" />
@@ -18,7 +19,7 @@ function BioImage({ src }) {
 function BioSection({ section }) {
   return (
     <div data-testid="bio-section">
-      <h3 className="text-white text-lg md:text-xl font-black uppercase tracking-wide flex items-center gap-3">
+      <h3 className="text-white text-base md:text-lg font-black uppercase tracking-wide flex items-center gap-3">
         <span className="inline-block w-6 h-[3px] bg-[#e91414]" />
         {section.heading}
       </h3>
@@ -36,7 +37,49 @@ function BioSection({ section }) {
   );
 }
 
+function BioDialog({ open, onOpenChange }) {
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent
+        data-testid="bio-dialog"
+        className="bg-[#0a0a0a] border-white/10 text-white max-w-3xl max-h-[85vh] overflow-y-auto p-6 md:p-10"
+      >
+        <div>
+          <p className="text-[#e91414] text-xs tracking-[0.3em] uppercase mb-2">About</p>
+          <DialogTitle className="heading-accent text-white text-2xl md:text-4xl font-black tracking-tight uppercase">
+            {bioData.title}
+          </DialogTitle>
+          <p className="mt-3 text-white/90 text-sm md:text-base font-bold tracking-wide">{bioData.subtitle}</p>
+
+          <div className="mt-6 space-y-4 text-white/75 text-[15px] leading-relaxed">
+            {bioData.intro.map((p) => (
+              <p key={p.slice(0, 60)}>{p}</p>
+            ))}
+          </div>
+
+          <div className="mt-10 space-y-10">
+            {bioData.sections.map((section) => (
+              <BioSection key={section.heading} section={section} />
+            ))}
+          </div>
+
+          <Link
+            to={bioData.discographyLink}
+            data-testid="bio-dialog-discography-link"
+            className="inline-flex items-center gap-2 text-[#e91414] hover:text-white text-sm font-bold tracking-[0.2em] uppercase mt-10 transition-colors"
+          >
+            {bioData.discographyText}
+            <ArrowRight size={16} />
+          </Link>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 export default function Bio() {
+  const [open, setOpen] = useState(false);
+
   return (
     <section id="bio" className="w-full bg-black py-20 md:py-28 border-t border-white/5">
       <div className="max-w-6xl mx-auto px-6">
@@ -51,29 +94,36 @@ export default function Bio() {
               {bioData.subtitle}
             </p>
 
-            <div className="mt-6 space-y-4 text-white/75 text-[15px] leading-relaxed">
-              {bioData.intro.map((p) => (
-                <p key={p.slice(0, 60)}>{p}</p>
-              ))}
-            </div>
+            <button
+              type="button"
+              data-testid="bio-preview-box"
+              onClick={() => setOpen(true)}
+              className="group block w-full text-left mt-6 p-6 md:p-8 bg-[#0a0a0a] border border-white/10 hover:border-[#e91414] rounded-sm transition-colors cursor-pointer"
+            >
+              <div className="space-y-4 text-white/75 text-[15px] leading-relaxed">
+                {bioData.intro.map((p) => (
+                  <p key={p.slice(0, 60)}>{p}</p>
+                ))}
+              </div>
+              <span className="inline-flex items-center gap-2 text-[#e91414] group-hover:text-white text-sm font-bold tracking-[0.2em] uppercase mt-6 transition-colors">
+                <Plus size={16} />
+                Leggi la biografia completa
+              </span>
+            </button>
 
             <Link
               to={bioData.discographyLink}
               data-testid="bio-discography-link"
-              className="inline-flex items-center gap-2 text-[#e91414] hover:text-white text-sm font-bold tracking-[0.2em] uppercase mt-6 transition-colors"
+              className="inline-flex items-center gap-2 text-[#e91414] hover:text-white text-sm font-bold tracking-[0.2em] uppercase mt-8 transition-colors"
             >
               {bioData.discographyText}
               <ArrowRight size={16} />
             </Link>
-
-            <div className="mt-12 space-y-10">
-              {bioData.sections.map((section) => (
-                <BioSection key={section.heading} section={section} />
-              ))}
-            </div>
           </div>
         </div>
       </div>
+
+      <BioDialog open={open} onOpenChange={setOpen} />
     </section>
   );
 }

@@ -91,42 +91,59 @@ export default function MixcloudPlayer() {
 
   return (
     <section id="mixcloud" className="w-full bg-black py-12 md:py-16 border-t border-white/5">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="mb-8 flex items-end justify-between gap-4 flex-wrap">
-          <div>
-            <h2 className="heading-accent text-white text-2xl md:text-3xl font-black tracking-tight uppercase">
-              Mix &amp; Podcast
-            </h2>
-            <p className="text-[#e91414] text-[10px] tracking-[0.3em] uppercase mt-3 inline-flex items-center gap-1.5">
-              <Headphones size={11} />
-              Mixcloud
-            </p>
-            <p className="text-white/60 text-xs md:text-sm mt-3 max-w-xl leading-relaxed">
-              I miei DJ set, mashup e trasmissioni podcast. Clicca su un mix per ascoltarlo qui o aprilo su Mixcloud.
-            </p>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-[280px_1fr] gap-10 md:gap-12 items-start">
+          <div className="relative md:sticky md:top-28 order-last md:order-first" data-testid="mixcloud-side-image">
+            <div className="relative overflow-hidden rounded-sm shadow-2xl">
+              <img
+                src="/assets/mastafive-mix.png"
+                alt="Mastafive in DJ set"
+                loading="lazy"
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 ring-1 ring-white/10" />
+            </div>
+            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-4 border-[#e91414] -z-0" />
           </div>
-          <a
-            href={mixcloudProfile.profileUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-white text-white text-[10px] tracking-[0.25em] font-bold uppercase"
-          >
-            <ExternalLink size={11} />
-            Profilo
-          </a>
-        </div>
 
-        <FeaturedPlayer show={active} />
+          <div>
+            <div className="mb-8 flex items-end justify-between gap-4 flex-wrap">
+              <div>
+                <h2 className="heading-accent text-white text-2xl md:text-3xl font-black tracking-tight uppercase">
+                  Mix &amp; Podcast
+                </h2>
+                <p className="text-[#e91414] text-[10px] tracking-[0.3em] uppercase mt-3 inline-flex items-center gap-1.5">
+                  <Headphones size={11} />
+                  Mixcloud
+                </p>
+                <p className="text-white/60 text-xs md:text-sm mt-3 max-w-xl leading-relaxed">
+                  I miei DJ set, mashup e trasmissioni podcast. Clicca su un mix per ascoltarlo qui o aprilo su Mixcloud.
+                </p>
+              </div>
+              <a
+                href={mixcloudProfile.profileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-white text-white text-[10px] tracking-[0.25em] font-bold uppercase"
+              >
+                <ExternalLink size={11} />
+                Profilo
+              </a>
+            </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2.5 md:gap-3">
-          {mixcloudShows.map((show) => (
-            <ShowCard
-              key={show.key}
-              show={show}
-              active={active?.key === show.key}
-              onPlay={(s) => setActive(s)}
-            />
-          ))}
+            <FeaturedPlayer show={active} />
+
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 gap-2.5 md:gap-3">
+              {mixcloudShows.map((show) => (
+                <ShowCard
+                  key={show.key}
+                  show={show}
+                  active={active?.key === show.key}
+                  onPlay={(s) => setActive(s)}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

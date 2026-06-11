@@ -109,6 +109,8 @@ export const bioData = {
 };
 
 export const gallery = [
+  "/assets/mastafive-front.png",
+  "/assets/mastafive-side.png",
   "https://static.wixstatic.com/media/e93d0f_9b8d517663d44d7d954566e89410b7fc~mv2.jpg/v1/fill/w_500,h_330,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e93d0f_9b8d517663d44d7d954566e89410b7fc~mv2.jpg",
   "https://static.wixstatic.com/media/e93d0f_22c98461621a4ec1935a1062e37be4a1~mv2.jpg/v1/fill/w_500,h_460,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e93d0f_22c98461621a4ec1935a1062e37be4a1~mv2.jpg",
   "https://static.wixstatic.com/media/e93d0f_48caf944549c4b489bf40694bb33c013~mv2.jpg/v1/fill/w_500,h_400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e93d0f_48caf944549c4b489bf40694bb33c013~mv2.jpg",
