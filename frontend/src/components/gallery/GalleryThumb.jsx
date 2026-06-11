@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function GalleryThumb({ src, index, onOpen }) {
+  const contain = src.startsWith("/assets/");
   return (
     <button
       onClick={() => onOpen(index)}
@@ -11,7 +12,9 @@ export default function GalleryThumb({ src, index, onOpen }) {
         src={src}
         alt={`Mastafive ${index + 1}`}
         loading="lazy"
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${
+          contain ? "object-contain bg-white object-center" : "object-cover"
+        }`}
         style={{ filter: "grayscale(15%) brightness(0.9)" }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-300" />
