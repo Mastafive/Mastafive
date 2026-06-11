@@ -13,8 +13,8 @@ export default function HomePage() {
   return (
     <main className="w-full overflow-x-hidden">
       <Navbar />
-      <Bio />
       <Hero />
+      <Bio />
       <MixcloudPlayer />
       <MerchVideo />
       <Tracks />

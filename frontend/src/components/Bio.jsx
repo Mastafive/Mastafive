@@ -5,7 +5,7 @@ import { bioData } from "../mock";
 
 function BioImage({ src }) {
   return (
-    <div className="relative">
+    <div className="relative md:sticky md:top-28">
       <div className="relative overflow-hidden rounded-sm shadow-2xl">
         <img src={src} alt="Mastafive Bio" className="w-full h-auto object-cover" />
         <div className="absolute inset-0 ring-1 ring-white/10" />
@@ -15,25 +15,23 @@ function BioImage({ src }) {
   );
 }
 
-function BioParagraphs({ paragraphs, cta }) {
-  const [head, ...rest] = [paragraphs.slice(0, 3), paragraphs.slice(3)];
+function BioSection({ section }) {
   return (
-    <div className="mt-10 space-y-4 text-white/75 text-[15px] leading-relaxed">
-      {head.map((p) => (
-        <p key={p.slice(0, 60)}>{p}</p>
-      ))}
-
-      <Link
-        to={cta.href}
-        className="inline-flex items-center gap-2 text-[#e91414] hover:text-white text-sm font-bold tracking-[0.2em] uppercase mt-2 transition-colors"
-      >
-        {cta.text}
-        <ArrowRight size={16} />
-      </Link>
-
-      {rest[0].map((p) => (
-        <p key={p.slice(0, 60)}>{p}</p>
-      ))}
+    <div data-testid="bio-section">
+      <h3 className="text-white text-lg md:text-xl font-black uppercase tracking-wide flex items-center gap-3">
+        <span className="inline-block w-6 h-[3px] bg-[#e91414]" />
+        {section.heading}
+      </h3>
+      <p className="mt-3 text-white/75 text-[15px] leading-relaxed">{section.lead}</p>
+      {section.items.length > 0 && (
+        <ul className="mt-4 space-y-3">
+          {section.items.map((item) => (
+            <li key={item.label} className="text-white/75 text-[15px] leading-relaxed pl-4 border-l-2 border-white/10">
+              <span className="text-white font-bold">{item.label}:</span> {item.text}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
@@ -49,10 +47,30 @@ export default function Bio() {
             <h2 className="heading-accent text-white text-3xl md:text-5xl font-black tracking-tight uppercase">
               {bioData.title}
             </h2>
-            <BioParagraphs
-              paragraphs={bioData.paragraphs}
-              cta={{ href: bioData.discographyLink, text: bioData.discographyText }}
-            />
+            <p data-testid="bio-subtitle" className="mt-4 text-white/90 text-base font-bold tracking-wide">
+              {bioData.subtitle}
+            </p>
+
+            <div className="mt-6 space-y-4 text-white/75 text-[15px] leading-relaxed">
+              {bioData.intro.map((p) => (
+                <p key={p.slice(0, 60)}>{p}</p>
+              ))}
+            </div>
+
+            <Link
+              to={bioData.discographyLink}
+              data-testid="bio-discography-link"
+              className="inline-flex items-center gap-2 text-[#e91414] hover:text-white text-sm font-bold tracking-[0.2em] uppercase mt-6 transition-colors"
+            >
+              {bioData.discographyText}
+              <ArrowRight size={16} />
+            </Link>
+
+            <div className="mt-12 space-y-10">
+              {bioData.sections.map((section) => (
+                <BioSection key={section.heading} section={section} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

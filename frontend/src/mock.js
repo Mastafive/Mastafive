@@ -47,21 +47,62 @@ export const spotifyArtist = {
 
 export const bioData = {
   title: "BIO MASTAFIVE",
+  subtitle: "Johnny Andrea Mastrocinque | MASTAFIVE",
   image: "/assets/mastafive-bio.jpg",
-  paragraphs: [
-    "Mastafive al secolo Johnny Mastrocinque , 30 anni sul mixer, sia come Dee jay che come produttore, predilige le sonorit\u00e0 Funkie Jazz, Rap, Rock in cui la sua poliedricit\u00e0 artistica si riversa in pista.",
-    "Cresciuto in seno alla cultura Hip Hop ne \u00e8 uno dei testimoni pi\u00f9 appassionati.",
-    "Esponente e produttore insieme a Deal (Mauro Bottoni) della leggendaria Crew Rap italiana di fine anni 90 : Gate Keepaz .",
-    "Ideatore e organizzatore della sfida a colpi di rime \u201cTecniche Perfette\u201d (www.tecnicheperfette.com).",
-    "Fondatore e presidente della label B.M.Records (www.bmrecords.eu) e CEO di Massivo Label \u00e8 stato autore consulente e giudice del programma culto di MTv \u201cSPIT\u201d",
-    "Per tre edizioni giudice speciale per le sfide dirette della trasmissione AMICI",
-    "Ha collaborato come direttore artistico della label \u201cTempi Duri\u201d fondata da Fabri Fibra.",
-    "Direzione artistica e produzione di eventi dal 2009 ad oggi con MAS Network",
-    "Proprietario del locale storico e di riferimento \"JMB \" nella provincia di Torino",
-    "Autore e collaboratore dal 2013 di Radio DEE JAY (One Two - Occupy DEEJAY-Hotline Bars - CYPHAKINGS- SAY WAAAD)",
-    "Fondatore di Radio For Music e collaboratore di Hot Block Radio.",
-    "Produttore poliedrico presente anche in colonne sonore di serie tv e film.",
-    "Ad oggi attraversa la penisola con i suoi set e live dove accompagna moltissimi artisti nazionali sul palco, non c\u2019\u00e8 limite al suono di Mastafive."
+  intro: [
+    "Con oltre trent'anni di esperienza dietro al mixer, Mastafive (al secolo Johnny Andrea Mastrocinque) \u00e8 uno dei pilastri e dei testimoni pi\u00f9 appassionati della cultura Hip Hop italiana. DJ, beatmaker, produttore e imprenditore poliedrico, riversa in pista la sua ecletticit\u00e0 prediligendo sonorit\u00e0 Funkie Jazz, Rap e Rock.",
+    "Negli anni '90 ha segnato un'epoca come esponente e produttore, insieme a Deal (Mauro Bottoni), della leggendaria crew rap Gate Keepaz. La sua carriera \u00e8 un'evoluzione continua che lo vede protagonista e pioniere su molteplici fronti: dalla discografia alla televisione, dalla radio all'organizzazione dei pi\u00f9 importanti eventi urban del Paese."
+  ],
+  sections: [
+    {
+      heading: "Etichette Discografiche & Management",
+      lead: "La profonda visione imprenditoriale e lo scouting di talenti hanno portato Mastafive a fondare e dirigere realt\u00e0 discografiche di primo piano, guidandole come Amministratore Unico tramite la struttura MAS S.r.l.:",
+      items: [
+        { label: "B.M. Records", text: "Fondatore e Presidente." },
+        { label: "Massivo Label", text: "CEO." },
+        { label: "IAATJ", text: "Fondatore della label interamente dedicata all'esplorazione, alla produzione e alla promozione in ambito Jazz." },
+        { label: "Tempi Duri", text: "Ex Direttore Artistico della celebre etichetta fondata da Fabri Fibra." },
+        { label: "Thaurus", text: "Scouter." }
+      ]
+    },
+    {
+      heading: "Radio & Podcast",
+      lead: "La sua competenza musicale e la capacit\u00e0 di intercettare i trend lo rendono una voce autorevole nell'etere e nello streaming italiano:",
+      items: [
+        { label: "Radio DEE JAY", text: "Autore e collaboratore dal 2013, firma o contribuisce a format di grandissimo successo come One Two, Occupy DEEJAY, Hotline Bars, CYPHAKINGS e SAY WAAAD." },
+        { label: "Radio For Music", text: "Fondatore." },
+        { label: "Hot Block Radio", text: "Collaboratore attivo, confermandosi punto di riferimento per l'informazione e la divulgazione Hip Hop." }
+      ]
+    },
+    {
+      heading: "Televisione: Autore, Consulente e Giudice",
+      lead: "Il rispetto guadagnato sul campo e la sua profonda conoscenza delle dinamiche del freestyle lo hanno reso il volto e la mente dietro ai principali format televisivi dedicati al rap:",
+      items: [
+        { label: "MTV SPIT", text: "Autore, consulente e giudice del programma cult di MTV, fondamentale per aver portato le battle di rime al grande pubblico televisivo." },
+        { label: "AMICI di Maria De Filippi", text: "Giudice speciale chiamato a valutare le sfide dirette in tre edizioni della seguitissima trasmissione." }
+      ]
+    },
+    {
+      heading: "Produzione di Colonne Sonore",
+      lead: "Non c\u2019\u00e8 limite al suono di Mastafive. La sua abilit\u00e0 nel destrutturare e ricreare atmosfere musicali lo vede impegnato anche al di fuori della discografia tradizionale:",
+      items: [
+        { label: "Soundtrack per TV e Cinema", text: "Produttore poliedrico e compositore di colonne sonore per serie TV e pellicole cinematografiche, capace di unire il background urban al sound design per immagini." }
+      ]
+    },
+    {
+      heading: "Format Live, Direzione Artistica & Eventi",
+      lead: "L'impatto di Mastafive sul territorio si traduce nella creazione di spazi e momenti di aggregazione diventati istituzioni per la cultura musicale:",
+      items: [
+        { label: "Tecniche Perfette", text: "Ideatore, fondatore e organizzatore della pi\u00f9 celebre sfida a colpi di rime in Italia. Un'istituzione assoluta che da decenni scopre e lancia i migliori talenti del rap italiano." },
+        { label: "MAS Network", text: "Direzione artistica e produzione di eventi dal 2009 ad oggi, inclusa la gestione di format innovativi." },
+        { label: "JMB (Jamaika Music Bar)", text: "Proprietario e gestore dell'ormai storico locale di riferimento nella provincia di Torino, vero e proprio hub vitale per la musica dal vivo, il buon cibo e la cultura di strada." }
+      ]
+    },
+    {
+      heading: "Attivit\u00e0 Live & Set Attuali",
+      lead: "Oggi Mastafive attraversa ininterrottamente la penisola con i suoi DJ set infuocati e le performance dal vivo. Non solo incendia i dancefloor con la sua tecnica, ma accompagna regolarmente sul palco artisti nazionali di primissimo piano, dimostrando che la spinta creativa e l'attitudine live sono quelle del primo giorno.",
+      items: []
+    }
   ],
   discographyLink: "/discografia",
   discographyText: "VEDI DISCOGRAFIA"
