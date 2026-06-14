@@ -93,17 +93,31 @@ export default function MixcloudPlayer() {
     <section id="mixcloud" className="w-full bg-black py-12 md:py-16 border-t border-white/5">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-[280px_1fr] gap-10 md:gap-12 items-start">
-          <div className="relative md:sticky md:top-28 order-last md:order-first" data-testid="mixcloud-side-image">
-            <div className="relative overflow-hidden rounded-sm shadow-2xl">
-              <img
-                src="/assets/mastafive-mix.png"
-                alt="Mastafive in DJ set"
-                loading="lazy"
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 ring-1 ring-white/10" />
+          <div className="md:sticky md:top-28 order-last md:order-first space-y-10" data-testid="mixcloud-side-image">
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-sm shadow-2xl">
+                <img
+                  src="/assets/mastafive-mix.png"
+                  alt="Mastafive in DJ set"
+                  loading="lazy"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 ring-1 ring-white/10" />
+              </div>
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 border-4 border-[#e91414] -z-0" />
             </div>
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-4 border-[#e91414] -z-0" />
+            <div className="relative" data-testid="mixcloud-side-image-2">
+              <div className="relative overflow-hidden rounded-sm shadow-2xl">
+                <img
+                  src="https://static.wixstatic.com/media/e93d0f_89ff30fccffd47c7879d68b53877c8ec~mv2.jpg/v1/fill/w_500,h_750,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e93d0f_89ff30fccffd47c7879d68b53877c8ec~mv2.jpg"
+                  alt="Mastafive live"
+                  loading="lazy"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 ring-1 ring-white/10" />
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-4 border-[#e91414] -z-0" />
+            </div>
           </div>
 
           <div>

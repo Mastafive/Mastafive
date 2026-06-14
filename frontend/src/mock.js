@@ -79,7 +79,10 @@ export const bioData = {
       lead: "Il rispetto guadagnato sul campo e la sua profonda conoscenza delle dinamiche del freestyle lo hanno reso il volto e la mente dietro ai principali format televisivi dedicati al rap:",
       items: [
         { label: "MTV SPIT", text: "Autore, consulente e giudice del programma cult di MTV, fondamentale per aver portato le battle di rime al grande pubblico televisivo." },
-        { label: "AMICI di Maria De Filippi", text: "Giudice speciale chiamato a valutare le sfide dirette in tre edizioni della seguitissima trasmissione." }
+        { label: "AMICI di Maria De Filippi", text: "Giudice speciale chiamato a valutare le sfide dirette in tre edizioni della seguitissima trasmissione." },
+        { label: "Formusic TV", text: "Direttore artistico dal 2013 al 2019." },
+        { label: "Quarta Rete e GRP", text: "Autore per le emittenti televisive piemontesi." },
+        { label: "Discovery Channel", text: "Autore per il celebre network internazionale." }
       ]
     },
     {
