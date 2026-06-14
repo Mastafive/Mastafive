@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Play, ExternalLink, Headphones, Clock } from "lucide-react";
 import {
   mixcloudShows,
@@ -7,6 +7,65 @@ import {
   formatShowDate,
   mixcloudEmbedUrl
 } from "../mixcloud";
+
+function ParallaxImage({ src, alt, accentSide = "left", speed = 0.12, testId }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setVisible(true)),
+      { threshold: 0.15 }
+    );
+    io.observe(node);
+
+    let raf = 0;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        const rect = node.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const delta = center - window.innerHeight / 2;
+        setOffset(-delta * speed);
+        raf = 0;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => {
+      io.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [speed]);
+
+  return (
+    <div
+      ref={ref}
+      data-testid={testId}
+      className={`relative transition-all duration-1000 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      <div className="relative overflow-hidden rounded-sm shadow-2xl">
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className="w-full h-auto object-cover will-change-transform"
+          style={{ transform: `translate3d(0, ${offset}px, 0) scale(1.08)`, transition: "transform 120ms linear" }}
+        />
+        <div className="absolute inset-0 ring-1 ring-white/10" />
+      </div>
+      <div
+        className={`absolute -bottom-4 ${accentSide === "left" ? "-left-4" : "-right-4"} w-24 h-24 border-4 border-[#e91414] -z-0`}
+      />
+    </div>
+  );
+}
 
 function ShowCard({ show, active, onPlay }) {
   return (
@@ -94,30 +153,19 @@ export default function MixcloudPlayer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-[280px_1fr] gap-10 md:gap-12 items-start">
           <div className="md:sticky md:top-28 order-last md:order-first space-y-10" data-testid="mixcloud-side-image">
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-sm shadow-2xl">
-                <img
-                  src="/assets/mastafive-mix.png"
-                  alt="Mastafive in DJ set"
-                  loading="lazy"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 ring-1 ring-white/10" />
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 border-4 border-[#e91414] -z-0" />
-            </div>
-            <div className="relative" data-testid="mixcloud-side-image-2">
-              <div className="relative overflow-hidden rounded-sm shadow-2xl">
-                <img
-                  src="https://static.wixstatic.com/media/e93d0f_89ff30fccffd47c7879d68b53877c8ec~mv2.jpg/v1/fill/w_500,h_750,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e93d0f_89ff30fccffd47c7879d68b53877c8ec~mv2.jpg"
-                  alt="Mastafive live"
-                  loading="lazy"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 ring-1 ring-white/10" />
-              </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-4 border-[#e91414] -z-0" />
-            </div>
+            <ParallaxImage
+              src="/assets/mastafive-mix.png"
+              alt="Mastafive in DJ set"
+              accentSide="left"
+              speed={0.1}
+            />
+            <ParallaxImage
+              src="https://static.wixstatic.com/media/e93d0f_89ff30fccffd47c7879d68b53877c8ec~mv2.jpg/v1/fill/w_500,h_750,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e93d0f_89ff30fccffd47c7879d68b53877c8ec~mv2.jpg"
+              alt="Mastafive live"
+              accentSide="right"
+              speed={0.14}
+              testId="mixcloud-side-image-2"
+            />
           </div>
 
           <div>
