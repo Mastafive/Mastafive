@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/Mastafive/static/css/main.57811b0d.css",
+    "main.js": "/Mastafive/static/js/main.79faa703.js",
+    "index.html": "/Mastafive/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.57811b0d.css",
+    "static/js/main.79faa703.js"
+  ]
+}
