@@ -48,7 +48,7 @@ export const spotifyArtist = {
 export const bioData = {
   title: "BIO MASTAFIVE",
   subtitle: "Johnny Andrea Mastrocinque | MASTAFIVE",
-  image: "/assets/mastafive-bio.jpg",
+  image: process.env.PUBLIC_URL + "/assets/mastafive-bio.jpg",
   intro: [
     "Con oltre trent'anni di esperienza dietro al mixer, Mastafive (al secolo Johnny Andrea Mastrocinque) \u00e8 uno dei pilastri e dei testimoni pi\u00f9 appassionati della cultura Hip Hop italiana. DJ, beatmaker, produttore e imprenditore poliedrico, riversa in pista la sua ecletticit\u00e0 prediligendo sonorit\u00e0 Funkie Jazz, Rap e Rock.",
     "Negli anni '90 ha segnato un'epoca come esponente e produttore, insieme a Deal (Mauro Bottoni), della leggendaria crew rap Gate Keepaz. La sua carriera \u00e8 un'evoluzione continua che lo vede protagonista e pioniere su molteplici fronti: dalla discografia alla televisione, dalla radio all'organizzazione dei pi\u00f9 importanti eventi urban del Paese."
@@ -112,8 +112,8 @@ export const bioData = {
 };
 
 export const gallery = [
-  "/assets/mastafive-front.png",
-  "/assets/mastafive-side.png",
+  process.env.PUBLIC_URL + "/assets/mastafive-front.png",
+  process.env.PUBLIC_URL + "/assets/mastafive-side.png",
   "https://static.wixstatic.com/media/e93d0f_9b8d517663d44d7d954566e89410b7fc~mv2.jpg/v1/fill/w_500,h_330,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e93d0f_9b8d517663d44d7d954566e89410b7fc~mv2.jpg",
   "https://static.wixstatic.com/media/e93d0f_22c98461621a4ec1935a1062e37be4a1~mv2.jpg/v1/fill/w_500,h_460,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e93d0f_22c98461621a4ec1935a1062e37be4a1~mv2.jpg",
   "https://static.wixstatic.com/media/e93d0f_48caf944549c4b489bf40694bb33c013~mv2.jpg/v1/fill/w_500,h_400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e93d0f_48caf944549c4b489bf40694bb33c013~mv2.jpg",

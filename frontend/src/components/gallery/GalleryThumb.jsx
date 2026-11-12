@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function GalleryThumb({ src, index, onOpen }) {
-  const contain = src.startsWith("/assets/");
+  const contain = src.includes("/assets/");
   return (
     <button
       onClick={() => onOpen(index)}

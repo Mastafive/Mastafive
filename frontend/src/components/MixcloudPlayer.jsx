@@ -154,7 +154,7 @@ export default function MixcloudPlayer() {
         <div className="grid md:grid-cols-[280px_1fr] gap-10 md:gap-12 items-start">
           <div className="md:sticky md:top-28 order-last md:order-first space-y-10" data-testid="mixcloud-side-image">
             <ParallaxImage
-              src="/assets/mastafive-mix.png"
+              src={process.env.PUBLIC_URL + "/assets/mastafive-mix.png"}
               alt="Mastafive in DJ set"
               accentSide="left"
               speed={0.1}

@@ -36,7 +36,7 @@ function NavLinkItem({ link, onClick, mobile }) {
     );
   }
   return (
-    <a href={link.href} onClick={onClick} className={className}>
+    <a href={process.env.PUBLIC_URL + link.href} onClick={onClick} className={className}>
       {inner}
     </a>
   );
@@ -46,7 +46,7 @@ function Brand() {
   return (
     <Link to="/" className="flex items-center group">
       <img
-        src="/assets/mastafive-logo.png"
+        src={process.env.PUBLIC_URL + "/assets/mastafive-logo.png"}
         alt="Mastafive"
         className="h-10 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
         draggable="false"

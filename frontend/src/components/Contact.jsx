@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Mail, Send, Instagram, Facebook, Twitter, Linkedin, Youtube, Music2 } from "lucide-react";
 import { contactData, socials } from "../mock";
 import { useToast } from "../hooks/use-toast";
 
 const ICON_MAP = { Instagram, Facebook, Twitter, Linkedin, Youtube, Music2 };
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 function validateForm(form) {
   if (!form.name || !form.email || !form.message) {
@@ -91,7 +89,7 @@ function FormField({ label, name, type = "text", value, onChange, multiline = fa
 function ContactForm() {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
-  const [sending, setSending] = useState(false);
+  const sending = false;
 
   const handleChange = (e) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
@@ -102,20 +100,11 @@ function ContactForm() {
       toast({ title: "Campi mancanti", description: error });
       return;
     }
-    setSending(true);
-    try {
-      await axios.post(`${API}/contact`, form);
-      setForm({ name: "", email: "", subject: "", message: "" });
-      toast({
-        title: "Messaggio inviato!",
-        description: "Grazie per averci scritto. Ti risponderemo al più presto."
-      });
-    } catch (err) {
-      const detail = err?.response?.data?.detail || "Riprova tra qualche istante.";
-      toast({ title: "Invio fallito", description: String(detail) });
-    } finally {
-      setSending(false);
-    }
+    // Versione statica (GitHub Pages): niente backend, apre il client di posta già compilato
+    const subject = form.subject || `Contatto dal sito - ${form.name}`;
+    const body = `${form.message}\n\n${form.name}\n${form.email}`;
+    window.location.href = `mailto:${contactData.bookingEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    toast({ title: "Quasi fatto", description: "Si apre la tua app di posta con il messaggio pronto da inviare." });
   };
 
   return (

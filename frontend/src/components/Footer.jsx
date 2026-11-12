@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="text-center md:text-left flex flex-col items-center md:items-start">
           <img
-            src="/assets/mastafive-logo.png"
+            src={process.env.PUBLIC_URL + "/assets/mastafive-logo.png"}
             alt="Mastafive"
             className="h-12 w-auto object-contain"
             draggable="false"

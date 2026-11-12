@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-6xl fade-up">
         <div className="mb-6 flex flex-col items-center">
           <img
-            src="/assets/mastafive-logo.png"
+            src={process.env.PUBLIC_URL + "/assets/mastafive-logo.png"}
             alt="Mastafive Logo"
             className="logo-graffiti w-auto h-72 sm:h-96 md:h-[28rem] lg:h-[32rem] object-contain block"
             draggable="false"
